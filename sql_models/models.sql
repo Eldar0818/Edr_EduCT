@@ -26,3 +26,8 @@ CREATE TABLE teachers (
     phone VARCHAR(50),
     salary DECIMAL(7, 2)
 );
+
+CREATE TABLE courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150)
+);
