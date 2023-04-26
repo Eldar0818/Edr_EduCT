@@ -1,8 +1,8 @@
 import { DB } from "../database.js"
 import JWT from 'jsonwebtoken'
-import dotenv from 'dotenv'
+import { dotenvConfig } from "../helpers/dotenvConfig.js"
 
-dotenv.config()
+dotenvConfig()
 
 export function getUsers(response){
     
@@ -88,7 +88,7 @@ export function userLogin(body, response) {
         const validatePassword =user.password === body.password
         if(!validatePassword) return response.status(403).json("Wrong password!")
 
-        const token = JWT.sign({ id: user.userId }, process.env.JWT_SECRET_KEY)
+        const token = JWT.sign({ id: user.userId, adminId: process.env.ADMIN_USER_ID }, process.env.JWT_SECRET_KEY)
         const {password, ...other} = user
 
         response.cookie("access_token", token, {

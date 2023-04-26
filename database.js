@@ -1,6 +1,6 @@
 import DbConnection from "./helpers/DbConnection.js";
-import dotenv from "dotenv"
+import { dotenvConfig } from "./helpers/dotenvConfig.js";
 
-dotenv.config()
+dotenvConfig()
 
 export const DB = DbConnection(process.env.DB_HOST, process.env.DB_USER, process.env.DB_PASS, process.env.DB_NAME)

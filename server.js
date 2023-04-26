@@ -1,13 +1,13 @@
+import { dotenvConfig } from "./helpers/dotenvConfig.js";
 import express from "express";
-import dotenv from "dotenv"
 import cors from "cors"
 import cookieParser from "cookie-parser";
 import appListener from "./helpers/appListener.js";
 import routesHandler from "./routes/index.js";
 
-const app = express()
+dotenvConfig()
 
-dotenv.config()
+const app = express()
 
 app.use(express.json())
 app.use(cors({
