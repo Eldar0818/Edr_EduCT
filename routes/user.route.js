@@ -1,4 +1,4 @@
-import { CreateUser, DeleteUser, GetUserById, GetUsers, UpdateUser } from "../controllers/user.controller.js"
+import { CreateUser, DeleteUser, GetUserById, GetUsers, UpdateUser, UserLogin } from "../controllers/user.controller.js"
 
 const userRouteProvider = (router) => {
 
@@ -11,6 +11,8 @@ const userRouteProvider = (router) => {
     router.get('/api/user/:id', GetUserById)
 
     router.delete('/api/user/:id', DeleteUser)
+
+    router.post('/api/login', UserLogin)
 
 }
 

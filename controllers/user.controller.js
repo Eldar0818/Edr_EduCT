@@ -1,4 +1,4 @@
-import { getUsers, createUser, updateUser, getOneUser, deleteUser } from "../services/user.service.js"
+import { getUsers, createUser, updateUser, getOneUser, deleteUser, userLogin } from "../services/user.service.js"
 import generateUserID from "../helpers/userIdGenarator.js"
 
 export const GetUsers = (req, res) => getUsers(res)
@@ -17,3 +17,5 @@ export const UpdateUser = (req, res) => {
 export const GetUserById = (req, res) => getOneUser(req.params.id, res)
 
 export const DeleteUser = (req, res) => deleteUser(req.params.id, res)
+
+export const UserLogin = (req, res) => userLogin(req.body, res)
